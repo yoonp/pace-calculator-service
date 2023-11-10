@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>yoonp</groupId>
-	<artifactId>running-app</artifactId>
+	<artifactId>pace-calculation-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>running-app</name>
-	<description>Application for Running</description>
+	<name>pace-calculation-service</name>
+	<description>Application which calculates distance, time and pace</description>
 	<properties>
 		<java.version>21</java.version>
 	</properties>
