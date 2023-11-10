@@ -1,4 +1,4 @@
-package yoonp.runningapp.core.error;
+package ca.libertyrunners.pacecalculationservice.core.error;
 
 public final class ErrorMessage {
 

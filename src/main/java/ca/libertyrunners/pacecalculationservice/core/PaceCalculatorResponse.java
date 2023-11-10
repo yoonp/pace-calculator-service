@@ -1,4 +1,4 @@
-package yoonp.runningapp.core;
+package ca.libertyrunners.pacecalculationservice.core;
 
 import lombok.Builder;
 import lombok.Data;

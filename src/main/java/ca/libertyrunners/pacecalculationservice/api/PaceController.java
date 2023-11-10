@@ -1,14 +1,14 @@
-package yoonp.runningapp.api;
+package ca.libertyrunners.pacecalculationservice.api;
 
 
+import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorRequest;
+import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorResponse;
+import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorService;
 import lombok.AllArgsConstructor;
 import lombok.val;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import yoonp.runningapp.core.PaceCalculatorRequest;
-import yoonp.runningapp.core.PaceCalculatorResponse;
-import yoonp.runningapp.core.PaceCalculatorService;
 
 @RestController
 @AllArgsConstructor

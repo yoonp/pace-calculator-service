@@ -6,9 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import yoonp.runningapp.core.PaceCalculatorRequest;
-import yoonp.runningapp.core.PaceCalculatorResponse;
-import yoonp.runningapp.core.PaceCalculatorService;
+import ca.libertyrunners.pacecalculationservice.api.PaceController;
+import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorRequest;
+import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorResponse;
+import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorService;
 
 import java.time.Duration;
 

@@ -1,11 +1,7 @@
-package yoonp.runningapp.core;
+package ca.libertyrunners.pacecalculationservice.core;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import yoonp.runningapp.core.error.ErrorMessage;
+import ca.libertyrunners.pacecalculationservice.core.error.ErrorMessage;
 
 import java.time.Duration;
 

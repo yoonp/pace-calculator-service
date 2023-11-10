@@ -1,4 +1,4 @@
-package yoonp.runningapp.core;
+package ca.libertyrunners.pacecalculationservice.core;
 
 import org.springframework.stereotype.Service;
 

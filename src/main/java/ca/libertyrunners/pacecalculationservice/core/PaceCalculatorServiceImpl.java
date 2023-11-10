@@ -1,8 +1,7 @@
-package yoonp.runningapp.core;
+package ca.libertyrunners.pacecalculationservice.core;
 
 import lombok.AllArgsConstructor;
 import lombok.val;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
