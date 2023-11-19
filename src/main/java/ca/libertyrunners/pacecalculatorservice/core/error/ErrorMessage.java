@@ -1,4 +1,4 @@
-package ca.libertyrunners.pacecalculationservice.core.error;
+package ca.libertyrunners.pacecalculatorservice.core.error;
 
 public final class ErrorMessage {
 

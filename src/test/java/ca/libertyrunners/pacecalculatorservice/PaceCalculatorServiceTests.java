@@ -1,10 +1,10 @@
-package yoonp.runningapp;
+package ca.libertyrunners.pacecalculatorservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RunningAppApplicationTests {
+class PaceCalculatorServiceTests {
 
 	@Test
 	void contextLoads() {

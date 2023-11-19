@@ -1,13 +1,13 @@
-package ca.libertyrunners.pacecalculationservice;
+package ca.libertyrunners.pacecalculatorservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RunningAppApplication {
+public class PaceCalculatorService {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RunningAppApplication.class, args);
+		SpringApplication.run(PaceCalculatorService.class, args);
 	}
 
 }

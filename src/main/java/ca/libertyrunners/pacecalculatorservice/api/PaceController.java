@@ -1,9 +1,9 @@
-package ca.libertyrunners.pacecalculationservice.api;
+package ca.libertyrunners.pacecalculatorservice.api;
 
 
-import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorRequest;
-import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorResponse;
-import ca.libertyrunners.pacecalculationservice.core.PaceCalculatorService;
+import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorRequest;
+import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorResponse;
+import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorService;
 import lombok.AllArgsConstructor;
 import lombok.val;
 import org.springframework.http.HttpStatus;

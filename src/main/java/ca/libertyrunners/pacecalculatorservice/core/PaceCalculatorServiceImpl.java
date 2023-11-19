@@ -1,4 +1,4 @@
-package ca.libertyrunners.pacecalculationservice.core;
+package ca.libertyrunners.pacecalculatorservice.core;
 
 import lombok.AllArgsConstructor;
 import lombok.val;

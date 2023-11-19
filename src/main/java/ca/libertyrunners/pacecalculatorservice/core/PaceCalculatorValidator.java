@@ -1,9 +1,6 @@
-package ca.libertyrunners.pacecalculationservice.core;
-
-import org.springframework.stereotype.Service;
+package ca.libertyrunners.pacecalculatorservice.core;
 
 import java.time.Duration;
-import java.util.List;
 
 public interface PaceCalculatorValidator {
 

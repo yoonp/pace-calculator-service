@@ -1,7 +1,7 @@
-package ca.libertyrunners.pacecalculationservice.core;
+package ca.libertyrunners.pacecalculatorservice.core;
 
 import org.springframework.stereotype.Component;
-import ca.libertyrunners.pacecalculationservice.core.error.ErrorMessage;
+import ca.libertyrunners.pacecalculatorservice.core.error.ErrorMessage;
 
 import java.time.Duration;
 
