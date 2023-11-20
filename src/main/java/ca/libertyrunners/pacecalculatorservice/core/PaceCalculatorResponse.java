@@ -1,5 +1,6 @@
 package ca.libertyrunners.pacecalculatorservice.core;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Data;
 
@@ -15,6 +16,7 @@ public class PaceCalculatorResponse {
 
     Duration pace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     String error;
 
 }
