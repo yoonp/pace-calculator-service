@@ -22,17 +22,17 @@ public class PaceCalculatorValidatorImpl implements PaceCalculatorValidator {
 
     private boolean validateInputCount(Double distance, Duration time, Duration pace){
 
-        int count = 0;
+        int numOfInputs = 0;
         if(distance != null && distance != 0){
-            count++;
+            numOfInputs++;
         }
         if(!time.isZero()){
-            count++;
+            numOfInputs++;
         }
         if(!pace.isZero()){
-            count++;
+            numOfInputs++;
         }
-        if(count !=2){
+        if(numOfInputs !=2){
             return true;
         }
         return false;
@@ -40,7 +40,7 @@ public class PaceCalculatorValidatorImpl implements PaceCalculatorValidator {
 
     private boolean validateInputFields(Double distance, Duration time, Duration pace){
 
-        int count = 0;
+        int numOfInputFields = 0;
         if(distance < 0 || time.isNegative() || pace.isNegative()){
             return true;
         }

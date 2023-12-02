@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -16,10 +15,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class PaceCalculatorIntegrationTest {
 
+    //initialize endpoint
     private static final String GET_CALCULATE_PACE_ENDPOINT = "/calculate-pace";
 
+    //create mock MVN(model, view, controller)
     @Autowired
     private MockMvc mockMvc;
+
 
     @Test
     void test_calculate_pace_ok() throws Exception {
@@ -35,5 +37,28 @@ public class PaceCalculatorIntegrationTest {
 
         assertNotNull(response);
     }
+    @Test
+    void test_calculate_pace_invalid_one_input() throws Exception {
+        val response = mockMvc.perform(get(GET_CALCULATE_PACE_ENDPOINT)
+                .param("distance", "10"))
+                .andExpect(status().isBadRequest())
+                .andReturn().getResponse();
+        System.out.println("Status code: " + response.getStatus());
+        System.out.println(response.getContentAsString());
+    }
+
+    @Test
+    void test_calculate_pace_invalid_three_inputs() throws Exception {
+        val response = mockMvc.perform(get(GET_CALCULATE_PACE_ENDPOINT)
+                        .param("distance", "10")
+                        .param("hour", "1")
+                        .param("minute", "30")
+                        .param("second", "15")
+                        .param("paceMinute", "5")
+                        .param("paceSecond", "30"))
+                .andExpect(status().isBadRequest())
+                .andReturn().getResponse();
+    }
+
 
 }
