@@ -43,8 +43,6 @@ public class PaceCalculatorIntegrationTest {
                 .param("distance", "10"))
                 .andExpect(status().isBadRequest())
                 .andReturn().getResponse();
-        System.out.println("Status code: " + response.getStatus());
-        System.out.println(response.getContentAsString());
     }
 
     @Test
