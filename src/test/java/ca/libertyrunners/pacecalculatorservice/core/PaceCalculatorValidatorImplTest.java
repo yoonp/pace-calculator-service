@@ -1,14 +1,13 @@
 package ca.libertyrunners.pacecalculatorservice.core;
 
 
+import ca.libertyrunners.pacecalculatorservice.core.error.ErrorMessage;
 import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
-import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorValidatorImpl;
-import ca.libertyrunners.pacecalculatorservice.core.error.ErrorMessage;
 
 import java.time.Duration;
 

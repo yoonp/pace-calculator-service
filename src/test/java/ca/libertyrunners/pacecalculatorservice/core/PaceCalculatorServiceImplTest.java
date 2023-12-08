@@ -7,10 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorRequest;
-import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorService;
-import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorServiceImpl;
-import ca.libertyrunners.pacecalculatorservice.core.PaceCalculatorValidator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
