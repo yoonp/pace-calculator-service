@@ -11,7 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-public class PaceCalculatorServiceImplTest {
+class PaceCalculatorServiceImplTest {
 
     @Mock
     private PaceCalculatorService paceCalculatorService;
@@ -20,12 +20,12 @@ public class PaceCalculatorServiceImplTest {
     private PaceCalculatorValidator paceCalculatorValidator;
 
     @BeforeEach
-    void setup(){
+    void setup() {
         paceCalculatorService = new PaceCalculatorServiceImpl(paceCalculatorValidator);
     }
 
     @Test
-    void testCalculatePace(){
+    void testCalculatePace() {
         val hour = 0;
         val minute = 50;
         val second = 0;
@@ -34,28 +34,28 @@ public class PaceCalculatorServiceImplTest {
         val request = PaceCalculatorRequest.builder().hour(hour).minute(minute).second(second).distance(distance).build();
         val result = paceCalculatorService.calculatePace(request);
 
-        assertEquals(5, result.getPace().toMinutes());
+        assertEquals("5 : 00 /km", result.getPace());
     }
 
     @Test
-    void testCalculateTime(){
+    void testCalculateTime() {
         val distance = 10D;
         val paceMinute = 5;
 
         val request = PaceCalculatorRequest.builder().paceMinute(paceMinute).distance(distance).build();
         val result = paceCalculatorService.calculatePace(request);
 
-        assertEquals(50, result.getTime().toMinutes());
+        assertEquals("50 : 00", result.getTime());
     }
 
     @Test
-    void testCalculateDistance(){
+    void testCalculateDistance() {
         val paceMinute = 5;
-        val distance = 10D;
+        val hour = 1;
 
-        val request = PaceCalculatorRequest.builder().paceMinute(5).distance(distance).build();
+        val request = PaceCalculatorRequest.builder().paceMinute(paceMinute).hour(hour).build();
         val result = paceCalculatorService.calculatePace(request);
 
-        assertEquals(10D, result.getDistance());
+        assertEquals("12.0 km", result.getDistance());
     }
 }

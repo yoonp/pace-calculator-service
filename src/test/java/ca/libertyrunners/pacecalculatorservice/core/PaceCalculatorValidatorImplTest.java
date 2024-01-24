@@ -14,7 +14,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-public class PaceCalculatorValidatorImplTest {
+class PaceCalculatorValidatorImplTest {
 
     @Autowired
     PaceCalculatorValidatorImpl validator;
@@ -25,7 +25,7 @@ public class PaceCalculatorValidatorImplTest {
     }
 
     @Test
-    void testValidate_successful(){
+    void testValidate_successful() {
         Double distance = 0.0;
         Duration time = Duration.ofHours(3).plusMinutes(28).plusSeconds(37);
         Duration pace = Duration.ofMinutes(4).plusSeconds(58);
@@ -36,7 +36,7 @@ public class PaceCalculatorValidatorImplTest {
     }
 
     @Test
-    void testValidateInputCount_unsuccessful(){
+    void testValidateInputCount_unsuccessful() {
         Double distance = 42.2;
         Duration time = Duration.ofHours(3).plusMinutes(28).plusSeconds(37);
         Duration pace = Duration.ofMinutes(4).plusSeconds(58);
@@ -47,7 +47,7 @@ public class PaceCalculatorValidatorImplTest {
     }
 
     @Test
-    void testValidateInputNumber_unsuccessful(){
+    void testValidateInputNumber_unsuccessful() {
         Double distance = -42.2;
         Duration time = Duration.ofHours(-3).plusMinutes(28).plusSeconds(37);
         Duration pace = Duration.ofMinutes(4).plusSeconds(58);
