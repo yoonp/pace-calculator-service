@@ -100,4 +100,16 @@ class DurationFormatTest {
         assertEquals("59 s/km", result.getPace());
     }
 
+    @Test
+    void testFormat_7() {
+        val hour = 9999;
+        val distance = 2D;
+
+        val request = PaceCalculatorRequest.builder().hour(hour).distance(distance).build();
+        val result = paceCalculatorService.calculatePace(request);
+
+        assertEquals("416 days 15 : 00 : 00", result.getTime());
+        assertEquals("208 days 7 : 30 : 00 /km", result.getPace());
+    }
+
 }

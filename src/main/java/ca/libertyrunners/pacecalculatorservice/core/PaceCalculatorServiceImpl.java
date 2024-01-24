@@ -70,8 +70,8 @@ public class PaceCalculatorServiceImpl implements PaceCalculatorService {
         }
 
         if (isPace) {
-            int index = formattedDuration.indexOf('s');
-            formattedDuration = index != -1 ? formattedDuration.replace("s", "s/km") : formattedDuration + " /km";
+            boolean isFast = formattedDuration.indexOf('s') == formattedDuration.length()-1;
+            formattedDuration = isFast ? formattedDuration.replace("s", "s/km") : formattedDuration + " /km";
         }
 
         return formattedDuration;
