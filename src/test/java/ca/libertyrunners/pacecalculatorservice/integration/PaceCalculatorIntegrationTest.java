@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -13,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PaceCalculatorIntegrationTest {
+class PaceCalculatorIntegrationTest {
 
     //initialize endpoint
     private static final String GET_CALCULATE_PACE_ENDPOINT = "/calculate-pace";
@@ -22,25 +23,25 @@ public class PaceCalculatorIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 
-
     @Test
     void test_calculate_pace_ok() throws Exception {
 
         val response = mockMvc.perform(get(GET_CALCULATE_PACE_ENDPOINT)
-                .param("distance", "10")
-                .param("hour", "1"))
+                        .param("distance", "10")
+                        .param("hour", "1"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("distance").value(10.0))
-                .andExpect(jsonPath("time").value("PT1H"))
-                .andExpect(jsonPath("pace").value("PT6M"))
+                .andExpect(jsonPath("distance").value("10.0 km"))
+                .andExpect(jsonPath("time").value("1 : 00 : 00"))
+                .andExpect(jsonPath("pace").value("6 : 00 /km"))
                 .andReturn().getResponse();
 
         assertNotNull(response);
     }
+
     @Test
     void test_calculate_pace_invalid_one_input() throws Exception {
         val response = mockMvc.perform(get(GET_CALCULATE_PACE_ENDPOINT)
-                .param("distance", "10"))
+                        .param("distance", "10"))
                 .andExpect(status().isBadRequest())
                 .andReturn().getResponse();
     }

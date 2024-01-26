@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(PaceController.class)
-public class PaceControllerTest {
+class PaceControllerTest {
 
     private static final String GET_CALCULATE_PACE = "/calculate-pace?distance=%s&hour=%s&minute=%s&second=%s&paceMinute=%s&paceSecond=%s";
 
@@ -42,13 +42,13 @@ public class PaceControllerTest {
 
         Duration time = Duration.ofHours(request.getHour()).plusMinutes(request.getMinute()).plusSeconds(request.getSecond());
         Duration pace = Duration.ofHours(request.getPaceMinute()).plusSeconds(request.getPaceSecond());
-        PaceCalculatorResponse response = PaceCalculatorResponse.builder().distance(request.getDistance()).time(time).pace(pace).build();
+        PaceCalculatorResponse response = PaceCalculatorResponse.builder().distance(request.getDistance() + " km").time(hour + " : " + minute + " : " + second).pace(paceMinute + " : " + paceSecond + " /km").build();
 
         when(paceCalculatorService.calculatePace(request)).thenReturn(response);
 
         val uri = String.format(GET_CALCULATE_PACE, distance, hour, minute, second, paceMinute, paceSecond);
         mockMvc.perform(get(uri))
-                        .andExpect(status().isOk());
+                .andExpect(status().isOk());
 
         verify(paceCalculatorService, times(1)).calculatePace(request);
     }

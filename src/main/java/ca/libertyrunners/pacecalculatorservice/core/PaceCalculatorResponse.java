@@ -4,17 +4,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.Duration;
-
 @Data
 @Builder
 public class PaceCalculatorResponse {
 
-    Double distance;
+    String distance;
 
-    Duration time;
+    String time;
 
-    Duration pace;
+    String pace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     String error;
