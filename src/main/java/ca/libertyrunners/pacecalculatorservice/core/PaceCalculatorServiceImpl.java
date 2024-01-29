@@ -34,7 +34,7 @@ public class PaceCalculatorServiceImpl implements PaceCalculatorService {
 
     private PaceCalculatorResponse calculate(Double distance, Duration time, Duration pace) {
         if (distance == 0D) {
-            distance = (double) time.dividedBy(pace);
+            distance = (double) time.toMillis() / pace.toMillis();
         }
         distance = distance * 100;
         if (time.isZero()) {
@@ -46,8 +46,7 @@ public class PaceCalculatorServiceImpl implements PaceCalculatorService {
             pace = time.dividedBy(distance.longValue());
             pace = pace.multipliedBy(100);
         }
-        distance = distance / 100;
-
+        distance = Math.round(distance) / 100.0;
         return PaceCalculatorResponse.builder().distance(distance + " km").time(formatDuration(time, false)).pace(formatDuration(pace, true)).build();
     }
 
